@@ -3,7 +3,6 @@ module alu
     input [7:0] a,
     input [7:0] b,
     input [2:0] op,
-    output cy,
     output reg [7:0] out
 );
 
