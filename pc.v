@@ -6,7 +6,7 @@ module pc
 );
 
 always @(posedge clk)
-    if (clr)
+    if (!clr)
     begin
         data <= 0;
     end

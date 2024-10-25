@@ -1,5 +1,9 @@
 `timescale  1ns/100ps
 
+`include "alu.v"
+`include "aku.v"
+
+
 module operation_block(
     input [2:0] operation_code,
     input aku_enable,
@@ -20,28 +24,35 @@ endmodule
 
 module operation_block_tb;
 reg [2:0] op_code;
-reg ce;
+reg aku_enable;
 reg clk;
 reg [7:0] b_input;
 wire [7:0] result;
 wire cy;
 
+operation_block op_bo1(.operation_code(op_code), .aku_enable(aku_enable), .clk(clk), .in_b(b_input), .out_result(result), .Carry_flag(cy));
+
 initial begin
     forever begin
         #5 clk = ~clk;
-        if (ce & !clk)
-            ce = 1'b0;
     end
 end
 
 initial begin
     clk = 1'b0;
-    b_input = 8'd10
+    b_input = 8'd10;
     op_code = 3'd6;
     aku_enable = 1'b1;
+    #10 aku_enable = 1'b0;
+    #20 $finish;
     
 end
 
+    initial begin
+	$dumpfile("op_bl.vcd");
+	$dumpvars(0, operation_block_tb);
+	$dumpon;
+end
 
 
 endmodule

@@ -43,7 +43,7 @@ reg [8:0] sum;
     end
 
 endmodule
-
+/*
 module alu_tb;
 
 reg [7:0] a;
@@ -79,3 +79,4 @@ initial
 end
 
 endmodule
+*/
