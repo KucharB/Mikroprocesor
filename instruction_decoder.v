@@ -18,10 +18,6 @@ begin
     if (instruction[5:2] >= 3'd0 && instruction[5:2] <= 3'd6)
     begin
         aku_enable <= 1'b1;
-    end
-
-    if(instruction[5:2] == 3'd6)
-    begin
         register_addr <= instruction[1:0];
     end
 
