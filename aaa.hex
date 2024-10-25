@@ -1,0 +1,33 @@
+00 // ADD R0 ; add R0
+05 // SUB R1 ; subtract R1
+14 // NOT ; negate
+1A // LD R2 ; load into R2
+1F // ST R3 ; store from R3
+//; no operation
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
+3F
