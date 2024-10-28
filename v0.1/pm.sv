@@ -1,9 +1,9 @@
 module pm
 (
     input [4:0] adr,
-    output reg [5:0] data
+    output logic [5:0] data
 );
-reg [5:0] MEM [31:0];
+reg [15:0] MEM [31:0];
 
 initial 
 begin
@@ -15,11 +15,11 @@ begin
     MEM[5] = 6'b011011;
 end
 
-always @(adr) 
+always_comb @(adr) 
 begin
-    data <= MEM[adr];
+    data = MEM[adr];
     if(adr > 5'd5) 
-        data <= 6'b111100;
+        data = 6'b111100;
 end
 
 endmodule
