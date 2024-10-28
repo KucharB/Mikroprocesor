@@ -20,7 +20,7 @@ aku aku_unit(.ce(aku_enable), .clk(clk), .data_in(operation_result), .data_out(o
 
 
 endmodule
-
+/*
 
 module operation_block_tb;
 reg [2:0] op_code;
@@ -56,3 +56,4 @@ end
 
 
 endmodule
+*/

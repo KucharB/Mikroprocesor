@@ -8,7 +8,7 @@ module pc
 always @(posedge clk)
     if (!clr)
     begin
-        data <= 0;
+        data <= 5'd0;
     end
     else
     begin

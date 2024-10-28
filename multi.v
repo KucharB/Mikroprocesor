@@ -5,7 +5,7 @@ module multi(
     input [7:0] d,
     input [1:0] addr,
     output reg [7:0] choice
-)
+);
 
 always @(addr)
 begin
