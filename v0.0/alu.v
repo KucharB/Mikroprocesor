@@ -2,45 +2,67 @@
 
 module alu
 (
+    input Ci,
     input [7:0] a,
     input [7:0] b,
     input [2:0] op,
-    output reg [7:0] out,
-    output reg CY
+    output [7:0] out,
+    output CY
 );
 
 
 reg [8:0] sum;
+reg [7:0] out1;
+reg CY1;
 
     always @(*)
     begin
         case(op)
         3'b000 : begin
-            sum <= a + b;
-            out <= sum[7:0]; 
-            CY <= sum[8];
+            sum <= a + b + Ci;
+            out1 <= sum[7:0]; 
+            CY1 <= sum[8];
         end
-        3'b001 : out <= a - b;
+        3'b001 : out1 <= a - b - Ci;
         3'b010 : begin
-            out <= a & b;
-            CY <= 1'b0;
+            out1 <= a & b;
+            CY1 <= 1'b0;
         end
         3'b011 : begin 
-            out <= a | b;
-            CY <= 1'b0;
+            out1 <= a | b;
+            CY1 <= 1'b0;
         end
         3'b100 : begin
-            out <= a ^ b;
-            CY <= 1'b0;
+            out1 <= a ^ b;
+            CY1 <= 1'b0;
         end
         3'b101 : begin
-            out <= ~a;
-            CY <= 1'b0;
+            out1 <= ~a;
+            CY1 <= 1'b0;
         end
-        3'b110 : out <= b;
-        default : out <= b;
+        3'b110 : out1 <= b;
+        default : out1 <= b;
         endcase
     end
+
+    assign out = out1;
+    assign CY = CY1;
+
+endmodule
+
+module CY_reg
+(
+    input flag,
+    input ce,
+    input clk,
+    output reg CY
+);
+
+always @(posedge clk)
+begin
+    if(ce)
+    CY <= flag;
+end
 
 endmodule
 /*
