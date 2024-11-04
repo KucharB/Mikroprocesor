@@ -17,7 +17,7 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 
-gtkwave cpu.gtkw
+gtkwave cpu.gtkw --rcvar 'fontname_signals Monospace 20' --rcvar 'fontname_waves Monospace 18'
 
 if [$? -ne 0]; then
     echo GTKWave failure

@@ -1,24 +1,29 @@
 [*]
 [*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Mon Oct 28 12:54:10 2024
+[*] Wed Oct 30 14:43:36 2024
 [*]
 [dumpfile] "/home/bartek/Publiczny/Mikroprocesor/v0.0/cpu.vcd"
-[dumpfile_mtime] "Mon Oct 28 12:53:46 2024"
+[dumpfile_mtime] "Wed Oct 30 14:41:44 2024"
 [dumpfile_size] 4772
 [savefile] "/home/bartek/Publiczny/Mikroprocesor/v0.0/cpu.gtkw"
 [timestart] 0
-[size] 3840 2128
+[size] 1600 828
 [pos] -1 -1
-*-13.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-15.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] cpu_tb.
+[treeopen] cpu_tb.cpu1.
 [sst_width] 212
 [signals_width] 249
 [sst_expanded] 1
-[sst_vpaned_height] 681
+[sst_vpaned_height] 228
 @28
 cpu_tb.clk
 cpu_tb.clr
 @22
 cpu_tb.led[7:0]
 cpu_tb.switch[7:0]
+cpu_tb.cpu1.program_memory.adr[4:0]
+@23
+cpu_tb.cpu1.program_memory.data[5:0]
 [pattern_trace] 1
 [pattern_trace] 0
