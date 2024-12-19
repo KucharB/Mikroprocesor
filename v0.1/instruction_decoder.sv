@@ -18,7 +18,7 @@ module instruction_decoder
     output logic [3:0] operation_code,
     output logic reg_ce,
     output logic aku_enable,
-    output logic aku_mul_enable,
+    output logic counter_load,
 
     output logic [2:0] register_addr,
     output logic [9:0] mem_adr,
@@ -26,7 +26,8 @@ module instruction_decoder
     output logic mem_rd,
 
     output logic direct_load,
-    output logic [7:0] direct_data
+    output logic [7:0] direct_data,
+    output logic [4:0] address_counter
 );
 
 //instrukcja 16 bitów
@@ -39,7 +40,7 @@ always_comb
 begin
     operation_code = instruction[15:12];
     aku_enable = 1'b0;
-    aku_mul_enable = 1'b0;
+    counter_load = 1'b0;
     reg_ce = 1'b0;
     register_addr = 3'd0;
     mem_wr = 1'b0;
@@ -52,7 +53,8 @@ begin
         //aku_enable = ~(&instruction[14:11]);
         //aku_mul_enable = &instruction[14:11];
         if (instruction[14:12] == 3'b110) begin
-            aku_mul_enable = 1'b1;
+            counter_load = 1'b1;
+            address_counter = instruction [4:0];
         end
         else begin
             aku_enable = 1'b1;

@@ -3,7 +3,7 @@
 `include "instruction_decoder.sv"
 `include "operation_block.sv"
 `include "rf.sv"
-`include "md.sv"
+`include "pm.sv"
 `include "mux4_1.sv"
 
 module cpu(
@@ -32,11 +32,15 @@ wire dir_load;
 
 wire [7:0] op_block_in;
 
-pc prog_counter0(.clk(clk), .clr(clr), .data(actual_counter_o));
+wire [4:0] adr_counter;
+wire load_to_counter;
+
+pc prog_counter0(.clk(clk), .clr(clr), .data(actual_counter_o), .load(load_to_counter), .data_in(adr_counter));
 pm prog_mem0(.adr(actual_counter_o), .data(actual_instruction));
 instruction_decoder inst_dec0(.instruction(actual_instruction), .operation_code(op_code), .reg_ce(write_to_reg_en),
-                                .aku_enable(write_to_normal_aku_en), .aku_mul_enable(write_to_mul_aku_en),
-                                .register_addr(register_addr), .mem_adr(memory_adr), .mem_wr(memory_wr), .mem_rd(memory_rd), .direct_data(dir_data), .direct_load(dir_load));
+                                .aku_enable(write_to_normal_aku_en), .counter_load(write_to_mul_aku_en),
+                                .register_addr(register_addr), .mem_adr(memory_adr), .mem_wr(memory_wr), .mem_rd(memory_rd), .direct_data(dir_data), .direct_load(dir_load),
+                                .address_counter(adr_counter), .counter_load(load_to_counter));
 rf rf_bl(.data_in(aku_out), .clk(clk), .ce(write_to_reg_en), .reg_adr(register_addr), .data_out(aku_in));
 mux4_1 mux_in_alu_data(.a(aku_in), .b(dir_data), .c(memory_data), .sel({memory_rd, dir_load}), .o_data(op_block_in));
 operation_block op_bl(.operation_code(op_code), .aku_enable(write_to_normal_aku_en), .clk(clk), .in_b(op_block_in), .out_result(aku_out));
