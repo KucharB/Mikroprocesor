@@ -49,10 +49,9 @@ begin
     register_addr = 3'd0;
     mem_adr = 10'd0;
     direct_data = 8'd0;
+    address_counter = 5'd0;
     if(instruction[15]== 1'b0 && instruction[14:12]!= 3'b110) begin
-        //aku_enable = ~(&instruction[14:11]);
-        //aku_mul_enable = &instruction[14:11];
-        if (instruction[14:12] == 3'b110) begin
+        if (instruction[14:12] == 3'b111) begin
             counter_load = 1'b1;
             address_counter = instruction [4:0];
         end

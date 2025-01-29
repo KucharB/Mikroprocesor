@@ -6,7 +6,7 @@ module md(
     output logic [7:0] o_data
 );
 
-reg [7:0] MEM [0:1024];
+reg [7:0] MEM [0:1023];
 
 initial for(int i = 0; i < 1024; i++) MEM[i] = 0;//'(default:0);
 

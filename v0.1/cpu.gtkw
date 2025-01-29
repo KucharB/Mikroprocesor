@@ -1,90 +1,48 @@
 [*]
-[*] GTKWave Analyzer v3.3.104 (w)1999-2020 BSI
-[*] Mon Dec  9 13:14:32 2024
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Wed Jan 29 00:04:24 2025
 [*]
-[dumpfile] "/home/bartek/Publiczny/Mikroprocesor/v0.1/cpu.vcd"
-[dumpfile_mtime] "Mon Dec  9 10:21:23 2024"
-[dumpfile_size] 7804
-[savefile] "/home/bartek/Publiczny/Mikroprocesor/v0.1/cpu.gtkw"
+[dumpfile] "/home/bartek/Documents/sem2/Mikroprocesor/v0.1/cpu.vcd"
+[dumpfile_mtime] "Wed Jan 29 00:02:22 2025"
+[dumpfile_size] 11773
+[savefile] "/home/bartek/Documents/sem2/Mikroprocesor/v0.1/cpu.gtkw"
 [timestart] 0
-[size] 1600 828
-[pos] 1103 2127
-*-15.000000 115000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[size] 1600 813
+[pos] -141 -141
+*-15.300000 2 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] cpu_tb.
 [treeopen] cpu_tb.dut.
-[treeopen] cpu_tb.op_bl.
-[sst_width] 212
-[signals_width] 244
+[sst_width] 239
+[signals_width] 222
 [sst_expanded] 1
-[sst_vpaned_height] 228
+[sst_vpaned_height] 233
 @22
-cpu_tb.prog_mem0.adr[4:0]
-cpu_tb.prog_mem0.data[15:0]
-@200
--PROG_MEM
-@29
-cpu_tb.op_bl.aku_unit.ce
+cpu_tb.dut.actual_counter_o[4:0]
+cpu_tb.dut.actual_instruction[15:0]
+cpu_tb.dut.adr_counter[4:0]
+cpu_tb.dut.aku_in[7:0]
+cpu_tb.dut.aku_out[7:0]
 @28
-cpu_tb.op_bl.aku_unit.clk
+cpu_tb.dut.clk
+cpu_tb.dut.clr
 @22
-cpu_tb.op_bl.aku_unit.data_in[7:0]
-cpu_tb.op_bl.aku_unit.data_out[7:0]
-@200
--AKU
-@22
-cpu_tb.dut.data_mem.addr[9:0]
+cpu_tb.dut.dir_data[7:0]
 @28
-cpu_tb.dut.data_mem.clk
-@420
-cpu_tb.dut.data_mem.i
+cpu_tb.dut.dir_load
+cpu_tb.dut.load_to_counter
 @22
-cpu_tb.dut.data_mem.in_data[7:0]
-cpu_tb.dut.data_mem.o_data[7:0]
+cpu_tb.dut.memory_adr[9:0]
+cpu_tb.dut.memory_data[7:0]
 @28
-cpu_tb.dut.data_mem.wr
-@200
--DATAMEM
-@28
-cpu_tb.inst_dec0.mem_rd
+cpu_tb.dut.memory_rd
+cpu_tb.dut.memory_wr
 @22
-cpu_tb.mux_in_alu_data.a[7:0]
-cpu_tb.mux_in_alu_data.b[7:0]
-cpu_tb.mux_in_alu_data.c[7:0]
-cpu_tb.mux_in_alu_data.d[7:0]
+cpu_tb.dut.o_data[7:0]
+cpu_tb.dut.op_block_in[7:0]
+cpu_tb.dut.op_code[3:0]
 @28
-cpu_tb.mux_in_alu_data.sel[1:0]
-@22
-cpu_tb.mux_in_alu_data.o_data[7:0]
-@200
--MUX
-@22
-cpu_tb.mux_in_alu_data.a[7:0]
-cpu_tb.mux_in_alu_data.b[7:0]
-cpu_tb.mux_in_alu_data.c[7:0]
-cpu_tb.mux_in_alu_data.d[7:0]
-@28
-cpu_tb.mux_in_alu_data.sel[1:0]
-@22
-cpu_tb.mux_in_alu_data.o_data[7:0]
-@200
--ID
-@28
-cpu_tb.inst_dec0.aku_enable
-cpu_tb.inst_dec0.aku_mux_enable
-@22
-cpu_tb.inst_dec0.direct_data[7:0]
-@28
-cpu_tb.inst_dec0.direct_load
-@22
-cpu_tb.inst_dec0.instruction[15:0]
-cpu_tb.inst_dec0.mem_adr[9:0]
-@28
-cpu_tb.inst_dec0.mem_rd
-cpu_tb.inst_dec0.mem_wr
-@22
-cpu_tb.inst_dec0.operation_code[3:0]
-@28
-cpu_tb.inst_dec0.reg_ce
-cpu_tb.inst_dec0.register_addr[2:0]
+cpu_tb.dut.register_addr[2:0]
+cpu_tb.dut.write_to_normal_aku_en
+cpu_tb.dut.write_to_reg_en
 [pattern_trace] 1
 [pattern_trace] 0

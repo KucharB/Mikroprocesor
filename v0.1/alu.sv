@@ -39,6 +39,7 @@ logic CY1;
         end
         default : begin
           out1 = b;
+          sum[8] = Ci;
         end
         endcase
     end

@@ -15,7 +15,10 @@ clr = 1'b0;
 @(posedge clk)
 clr = 1'b1;
 
-#100 $finish;
+repeat(20) begin
+    @(posedge clk);
+end
+$finish;
 end
 
 initial

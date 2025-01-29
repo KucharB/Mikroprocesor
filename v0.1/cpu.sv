@@ -3,8 +3,8 @@
 `include "instruction_decoder.sv"
 `include "operation_block.sv"
 `include "rf.sv"
-`include "pm.sv"
 `include "mux4_1.sv"
+`include "pm.sv"
 
 module cpu(
     input clk,
@@ -17,7 +17,6 @@ wire [15:0] actual_instruction;
 wire [3:0] op_code;
 wire write_to_reg_en;
 wire write_to_normal_aku_en;
-wire write_to_mul_aku_en;
 wire [2:0] register_addr;
 wire [9:0] memory_adr;
 wire memory_wr;
@@ -31,7 +30,6 @@ wire [7:0] dir_data;
 wire dir_load;
 
 wire [7:0] op_block_in;
-wire counter_load;
 wire [4:0] adr_counter;
 wire load_to_counter;
 
